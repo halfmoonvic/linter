@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -16,6 +17,11 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: ['babel-loader']
+      },
+      {
+        test: /.(sc|c)ss$/,
+        exclude: /node_modules/,
+        loader: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
@@ -23,7 +29,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'public/index.html',
       filename: 'index.html'
-    })
+    }),
+    new StyleLintPlugin()
   ],
   resolve: {
     alias: {

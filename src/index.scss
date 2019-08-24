@@ -1,0 +1,26 @@
+.serction {
+  background-color: #f00;
+  // stylelint-disable-next-line
+  background-color: #00f;
+  .item {
+    width: 100px;
+  }
+}
+
+// stylelint-disable-next-line
+.item {
+  height: 100px;
+}
+
+.insert {
+  // stylelint-disable-next-line
+  display: block
+}
+
+// stylelint-disable-next-line
+.alter:after {color: red; content: 'example'}
+
+.delete {
+  // stylelint-disable-next-line
+  display: block;;
+}
