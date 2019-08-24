@@ -19,9 +19,21 @@ module.exports = {
         loader: ['babel-loader']
       },
       {
-        test: /.(sc|c)ss$/,
+        test: /.(sc|sa)ss$/,
         exclude: /node_modules/,
-        loader: ['style-loader', 'css-loader', 'sass-loader']
+        use: [
+          'style-loader',
+          { loader: 'css-loader', options: { importLoaders: 2 } },
+          {
+            loader: 'postcss-loader'
+            // options: {
+            //   config: {
+            //     path: './postcss.config.js'
+            //   }
+            // }
+          },
+          'sass-loader'
+        ]
       }
     ]
   },

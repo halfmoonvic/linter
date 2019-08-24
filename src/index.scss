@@ -1,3 +1,9 @@
+#root {
+  display: flex;
+  transform: translate3d(50px, 50px, 0);
+  justify-content: flex-start;
+}
+
 .serction {
   background-color: #f00;
   // stylelint-disable-next-line
