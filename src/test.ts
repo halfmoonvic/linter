@@ -19,5 +19,5 @@ class Test {
   }
 }
 
-let aha = new Test();
+const aha = new Test();
 aha.say();

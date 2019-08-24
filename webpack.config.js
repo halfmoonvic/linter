@@ -15,7 +15,26 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: ['babel-loader']
+        enforce: 'pre',
+        loader: ['babel-loader', 'eslint-loader']
+      },
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader'
+          },
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true
+            }
+          },
+          {
+            loader: 'eslint-loader'
+          }
+        ]
       }
     ]
   },
